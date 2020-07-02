@@ -22,7 +22,7 @@ public class GithubProvider {
             String string = response.body().string();
             String token = string.split("&")[0].split("=")[1];
             return token;
-        } catch (Exception e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return null;
@@ -39,7 +39,6 @@ public class GithubProvider {
             GithubUserDTO githubUser = JSON.parseObject(string, GithubUserDTO.class);
             return githubUser;
         } catch (IOException e) {
-            e.printStackTrace();
         }
         return null;
     }

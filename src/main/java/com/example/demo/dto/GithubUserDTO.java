@@ -29,10 +29,4 @@ public class GithubUserDTO {
         this.bio = bio;
     }
 
-    public GithubUserDTO(String name, Long id, String bio) {
-        this.name = name;
-        this.id = id;
-        this.bio = bio;
-    }
-
 }

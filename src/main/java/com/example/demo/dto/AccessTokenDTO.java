@@ -47,12 +47,4 @@ public class AccessTokenDTO {
         this.state = state;
     }
 
-    public AccessTokenDTO(String client_id, String client_secret, String code, String redirect_uri, String state) {
-        this.client_id = client_id;
-        this.client_secret = client_secret;
-        this.code = code;
-        this.redirect_uri = redirect_uri;
-        this.state = state;
-    }
-
 }
