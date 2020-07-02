@@ -35,6 +35,4 @@ public class GithubUserDTO {
         this.bio = bio;
     }
 
-    public GithubUserDTO() {
-    }
 }

@@ -5,7 +5,6 @@ import com.example.demo.dto.AccessTokenDTO;
 import com.example.demo.dto.GithubUserDTO;
 import okhttp3.*;
 import org.springframework.stereotype.Component;
-import okio.*;
 
 import java.io.IOException;
 
@@ -22,7 +21,6 @@ public class GithubProvider {
         try (Response response = client.newCall(request).execute()) {
             String string = response.body().string();
             String token = string.split("&")[0].split("=")[1];
-            System.out.println(string);
             return token;
         } catch (Exception e) {
             e.printStackTrace();

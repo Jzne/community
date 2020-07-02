@@ -55,6 +55,4 @@ public class AccessTokenDTO {
         this.state = state;
     }
 
-    public AccessTokenDTO() {
-    }
 }
