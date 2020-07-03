@@ -29,4 +29,12 @@ public class GithubUserDTO {
         this.bio = bio;
     }
 
+    @Override
+    public String toString() {
+        return "GithubUserDTO{" +
+                "name='" + name + '\'' +
+                ", id=" + id +
+                ", bio='" + bio + '\'' +
+                '}';
+    }
 }
