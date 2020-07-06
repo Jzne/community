@@ -18,9 +18,6 @@ import java.util.UUID;
 @Controller
 public class AuthorizeController {
 
-    @Autowired
-    private GithubProvider githubProvider;
-
     @Value("${github.client.id}")
     private String clientId;
     @Value("${github.client.secret}")
@@ -28,6 +25,8 @@ public class AuthorizeController {
     @Value("${github.redirect.uri}")
     private String redirectUri;
 
+    @Autowired
+    private GithubProvider githubProvider;
     @Autowired
     private UserMapper userMapper;
 
@@ -53,11 +52,7 @@ public class AuthorizeController {
             user.setGmtModified(user.getGmtCreate());
             userMapper.insert(user);
             response.addCookie(new Cookie("token", token));
-
-            return "redirect:index";
-        } else {
-            // 登录失败，请重新登录
-            return "redirect:index";
         }
+        return "redirect:index";
     }
 }
